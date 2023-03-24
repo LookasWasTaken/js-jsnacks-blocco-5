@@ -15,6 +15,7 @@ const zucchine = [
   { varietà: "Zucchino rampicante", peso: 0.7, lunghezza: 22 },
 ];
 
+const result = document.querySelector(".result")
 const container = document.querySelector(".container");
 let somma = 0;
 
@@ -25,7 +26,7 @@ zucchine.forEach((zucchina) => {
       <h5>Peso: ${zucchina.peso} kg</h5>
       <h5>Lunghezza: ${zucchina.lunghezza} cm</h5>
   </div>`;
-
   somma += zucchina.peso;
 });
+result.innerHTML += `<h1>Le zucchine complessivamente pesano ${somma} KG</h1>`
 console.log("Le zucchine complessivamente pesano", somma);
