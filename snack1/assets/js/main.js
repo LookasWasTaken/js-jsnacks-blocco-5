@@ -12,13 +12,20 @@ const zucchine = [
   { varietà: "Zucchina bianca triestina", peso: 0.3, lunghezza: 14 },
   { varietà: "Zucchino giallo", peso: 0.2, lunghezza: 8 },
   { varietà: "Zucchina trombetta di Albenga", peso: 0.8, lunghezza: 25 },
-  { varietà: "Zucchino rampicante", peso: 0.7, lunghezza: 22 }
+  { varietà: "Zucchino rampicante", peso: 0.7, lunghezza: 22 },
 ];
 
+const container = document.querySelector(".container");
 let somma = 0;
 
-zucchine.forEach(zucchina => {
+zucchine.forEach((zucchina) => {
+  container.innerHTML += `
+  <div class="zucchina">
+      <h3>Varietà: ${zucchina.varietà}</h3>
+      <h5>Peso: ${zucchina.peso} kg</h5>
+      <h5>Lunghezza: ${zucchina.lunghezza} cm</h5>
+  </div>`;
+
   somma += zucchina.peso;
 });
-
-console.log("Le zucchine complessivamente pesano", somma)
+console.log("Le zucchine complessivamente pesano", somma);
